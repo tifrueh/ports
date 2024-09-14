@@ -1,0 +1,25 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem              1.0
+
+PortGroup               github 1.0
+github.setup            tifrueh jdfs 0.1.0 v
+github.tarball_from     archive
+
+PortGroup               meson 1.0
+
+description             navigation and manipulation tool for johnny.decimal file systems
+
+long_description        The jdfs utility is a simple but powerful tool navigate and \
+                        manipulate johnny.decimal file systems with.
+
+revision                1
+categories              sysutils
+license                 GPL-3.0+
+maintainers             {@tifrueh tifrueh.ch:dev}
+platforms               darwin
+homepage                https://github.com/tifrueh/jdfs
+
+checksums               md5 263f18498b425c9140a2598b52ee27af \
+                        sha256 e0ebb978e6dbdb7b36c750a079e275c071dbfa49457b851304798330ca7b8741 \
+                        size 23795
