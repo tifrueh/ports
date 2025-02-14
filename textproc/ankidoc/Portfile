@@ -7,7 +7,7 @@ python.pep517_backend   setuptools
 python.link_binaries    yes
 
 PortGroup               github 1.0
-github.setup            tifrueh ankidoc 0.1.0-rc1 v
+github.setup            tifrueh ankidoc 0.1.0 v
 github.tarball_from     archive
 
 description             convert asciidoc notes to anki notes
@@ -15,16 +15,16 @@ description             convert asciidoc notes to anki notes
 long_description        The ankidoc utility is a short python script intended to make \
                         writing anki notes in asciidoc easier.
 
-revision                1
+revision                0
 categories              textproc
 license                 GPL-3.0+
 maintainers             {@tifrueh tifrueh.ch:dev}
 platforms               darwin
 homepage                https://github.com/tifrueh/ankidoc
 
-checksums               md5 085ef222d5e4b05b8d98bbfa8e100dfb \
-                        sha256 550c4a4e13f06d2cc2486579dd9a07a6edc4ffdef49aec0d024be3678a38139b \
-                        size 19278
+checksums               md5 3250a33e73f5e8d9e23352561a00d57c \
+                        sha256 9aeb98d91720222d7d05cb7d43b0effa6504f700c61a242dd5bb6a9c45492bff \
+                        size 19335
 
 post-destroot {
     xinstall -d ${destroot}${prefix}/bin/
