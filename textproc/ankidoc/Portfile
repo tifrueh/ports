@@ -15,7 +15,9 @@ description             convert asciidoc notes to anki notes
 long_description        The ankidoc utility is a short python script intended to make \
                         writing anki notes in asciidoc easier.
 
-revision                0
+depends_run-append      port:asciidoctor
+
+revision                1
 categories              textproc
 license                 GPL-3.0+
 maintainers             {@tifrueh tifrueh.ch:dev}
