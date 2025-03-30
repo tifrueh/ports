@@ -7,7 +7,7 @@ python.pep517_backend   setuptools
 python.link_binaries    yes
 
 PortGroup               github 1.0
-github.setup            tifrueh ankidoc 0.3.0-rc2 v
+github.setup            tifrueh ankidoc 0.3.0-rc3 v
 github.tarball_from     archive
 
 description             convert asciidoc notes to anki notes
@@ -24,9 +24,10 @@ maintainers             {@tifrueh tifrueh.ch:dev}
 platforms               darwin
 homepage                https://github.com/tifrueh/ankidoc
 
-checksums               md5 6186f6c06270f9f5c29b118b9c91a0a8 \
-                        sha256 6685d326164a6af4e60ed87be5198e72c4f71d4291567be6b255ca84af8041d0 \
-                        size 19848
+checksums               md5     2c4b71d421064dc9cda36b86d1f09a5a \
+                        sha256  9b91eb7b73664b16506db0525b738eea9520f15bdddfc58b976bc344a5d0805d \
+                        size    19859 \
+                        rmd160  38ec42e25e68444557b8758b6a6ae8ffbff0952f
 
 post-destroot {
     xinstall -d ${destroot}${prefix}/bin/
