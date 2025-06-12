@@ -2,9 +2,9 @@
 
 PortSystem              1.0
 
-PortGroup               github 1.0
-github.setup            tifrueh jdfs 0.1.0 v
-github.tarball_from     archive
+name                    jdfs
+version                 0.1.0
+revision                1
 
 PortGroup               meson 1.0
 
@@ -13,13 +13,28 @@ description             navigation and manipulation tool for johnny.decimal file
 long_description        The jdfs utility is a simple but powerful tool navigate and \
                         manipulate johnny.decimal file systems with.
 
-revision                1
 categories              sysutils
 license                 GPL-3.0+
 maintainers             {@tifrueh tifrueh.ch:dev}
 platforms               darwin
 homepage                https://github.com/tifrueh/jdfs
 
+master_sites            https://github.com/tifrueh/jdfs/archive/refs/tags/
+distfiles               v${version}${extract.suffix}
+
 checksums               md5 263f18498b425c9140a2598b52ee27af \
                         sha256 e0ebb978e6dbdb7b36c750a079e275c071dbfa49457b851304798330ca7b8741 \
                         size 23795
+
+conflicts               jdfs-devel
+
+subport jdfs-devel {
+    version             devel
+    revision            1
+    description         ${description} (development version)
+    long_description    ${long_description} (development version targeting the 'development' branch)
+    conflicts           jdfs
+    fetch.type          git
+    git.url             https://github.com/tifrueh/jdfs.git
+    git.branch          origin/development
+}
