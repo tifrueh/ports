@@ -3,7 +3,7 @@
 PortSystem              1.0
 
 name                    jdfs
-version                 0.1.0
+version                 0.1.1
 revision                1
 
 PortGroup               meson 1.0
@@ -22,9 +22,9 @@ homepage                https://github.com/tifrueh/jdfs
 master_sites            https://github.com/tifrueh/jdfs/archive/refs/tags/
 distfiles               v${version}${extract.suffix}
 
-checksums               md5 263f18498b425c9140a2598b52ee27af \
-                        sha256 e0ebb978e6dbdb7b36c750a079e275c071dbfa49457b851304798330ca7b8741 \
-                        size 23795
+checksums               md5 0b876c31a43de898a416be036478246f \
+                        sha256 6a3cb3462685c6abf0a1bfae20a1f19f28e38e088a1187473b68bed1b5b36795 \
+                        size 23749
 
 conflicts               jdfs-devel
 
