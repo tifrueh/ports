@@ -1,0 +1,40 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem              1.0
+
+PortGroup               python 1.0
+
+revision                0
+categories              textproc
+license                 GPL-3.0+
+maintainers             {@tifrueh tifrueh.ch:dev}
+platforms               darwin
+homepage                https://github.com/tifrueh/md2atxt
+description             convert Markdown notes to Anki notes
+long_description        The md2atxt utility is a short python script intended to make \
+                        writing Anki notes in Markdown easier.
+
+PortGroup               github 1.0
+github.setup            tifrueh md2atxt 0.2.1 v
+
+python.pep517_backend   hatch
+python.link_binaries    no
+
+depends_run-append      port:pandoc port:py-hatch port:py-hatch-vcs
+build.env-append        SETUPTOOLS_SCM_PRETEND_VERSION=v${version}
+
+checksums               md5     c0515a782b4bb754cc34f64ec0f4959d \
+                        sha256  5189699b1410c94801144176a4dc624a5dc09d42d1ca7a99edb8d70954353d9f \
+                        size    11655 \
+                        rmd160  eee5510c8177f16262f7d502309602d9015b7401
+
+post-destroot {
+    xinstall -d ${destroot}${prefix}/bin/
+    xinstall -d ${destroot}${prefix}/share/man/man1/
+    xinstall -d ${destroot}${prefix}/share/man/man5/
+    ln -s ${python.prefix}/bin/md2atxt ${destroot}${prefix}/bin/md2atxt
+    ln -s ${python.prefix}/share/man/man1/md2atxt.1 ${destroot}${prefix}/share/man/man1/md2atxt.1
+    ln -s ${python.prefix}/share/man/man5/md2atxt.al.5 ${destroot}${prefix}/share/man/man5/md2atxt.al.5
+    ln -s ${python.prefix}/share/man/man5/md2atxt.md.5 ${destroot}${prefix}/share/man/man5/md2atxt.md.5
+    ln -s ${python.prefix}/share/man/man5/md2atxt.txt.5 ${destroot}${prefix}/share/man/man5/md2atxt.txt.5
+}
